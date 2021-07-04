@@ -133,7 +133,7 @@ columns=fullflexible
 \renewcommand{\thetable}{\theenumi}
 Download all python codes from 
 \begin{lstlisting}
-https://github.com/unnatigupta2320/Assignment_10/codes
+https://github.com/unnatigupta2320/Assignment_10/codes.py
 \end{lstlisting}
 %
 and latex-tikz codes from 
@@ -147,11 +147,11 @@ Solve x+2y $\leq$ 10,x+y $\geq$ 1,x-y $\leq$ 0,x,y $\geq$ 0
 \section{Solution}
 The given system of inequality can be written in matrix form as
 \begin{align}
-    \myvec{-1 & -2 \\ 1 & 1 \\ -1 & 1 \\ 1 & 0 \\ 0 & 1}\vec{x} \succeq \myvec{-10\\1\\0\\0\\0}
+    \myvec{-1 & -2  \\ -1 & 1 \\ 1 & 1\\ 1 & 0 \\ 0 & 1}\vec{x} \succeq \myvec{-10\\0\\1\\0\\0}
 \end{align}
 which can be further simplified into 
 \begin{align}
-    \myvec{-1 & -2 \\ 1 & 1 \\ -1&1}\vec{x} \succeq \myvec{-10\\1\\0}
+    \myvec{-1 & -2 \\ 1 & 0 \\ 0&1}\vec{x} \succeq \myvec{-10\\\frac{-1}{2}\\\frac{-1}{2}}
 \end{align}
 Let the surplus vector be
 \begin{align}
@@ -160,32 +160,32 @@ Let the surplus vector be
 \begin{enumerate}
     \item 
     \begin{align}
-        \myvec{-1 & -2 \\ 1 & 1}\vec{x} &\succeq \myvec{-10 \\ 1}
+        \myvec{-1 & -2 \\ 1 & 0}\vec{x} &\succeq \myvec{-10 \\ \frac{-1}{2}}
         \\
-        \implies  \myvec{-1 & -2 \\ 1 & 1}\vec{x} &= \myvec{-10 \\ 1} + \vec{u}
+        \implies  \myvec{-1 & -2 \\ 1 & 0}\vec{x} &= \myvec{-10 \\ \frac{-1}{2}} + \vec{u}
     \end{align}
     resulting in 
     \begin{align}
-        \vec{x} &= \myvec{-1 & -2 \\ 1 & 1}^{-1}\myvec{-10 \\ 1} + \myvec{-1 & -2 \\ 1 & 1}^{-1}\vec{u}
+        \vec{x} &= \myvec{-1 & -2 \\ 1 & 0}^{-1}\myvec{-10 \\\frac{-1}{2}} + \myvec{-1 & -2 \\ 1 & 0}^{-1}\vec{u}
         \\
-        \implies \vec{x} &= \myvec{-12 \\11} + \myvec{1&2\\ -1&-1}\vec{u}   \label{eq1}
+        \implies \vec{x} &= \myvec{\frac{1}{2} \\ \frac{19}{4}} + \myvec{0&1\\ \frac{-1}{2}&\frac{-1}{2}}\vec{u}   \label{eq1}
     \end{align}
     \item 
     \begin{align}
-        \myvec{-1& -2 \\ -1 & 1}\vec{x} &\succeq \myvec{-10 \\ 0}
+        \myvec{-1& -2 \\ 0 & 1}\vec{x} &\succeq \myvec{-10 \\ \frac{-1}{2}}
         \\
-        \implies  \myvec{-1& -2 \\ -1 & 1}\vec{x} &= \myvec{-10 \\ 0} + \vec{u}
+        \implies  \myvec{-1& -2 \\ 0 & 1}\vec{x} &= \myvec{-10 \\ \frac{-1}{2}} + \vec{u}
     \end{align}
     resulting in 
     \begin{align}
-        \vec{x} &= \myvec{-1& -2 \\ -1 & 1}^{-1}\myvec{-10 \\ 0} + \myvec{-1& -2 \\ -1 & 1}^{-1}\vec{u}
+        \vec{x} &= \myvec{-1& -2 \\ 0 & 1}^{-1}\myvec{-10 \\ \frac{-1}{2}} + \myvec{-1& -2 \\ 0 & 1}^{-1}\vec{u}
         \\
-        \implies \vec{x} &= \myvec{\frac{10}{3}\\\frac{10}{3}} + \myvec{\frac{-1}{3}& \frac{-2}{3}\\\frac{-1}{3} & \frac{1}{3}}\vec{u} \label{eq2}
+        \implies \vec{x} &= \myvec{9\\\frac{1}{2}} + \myvec{-1& -2 \\ 0 & 1}\vec{u} \label{eq2}
     \end{align}
 \end{enumerate}
 Now,solution region which is common to regions of eq. \eqref{eq1} and eq. \eqref{eq2},is given by
 \begin{align}
-    \boxed{\vec{x} = \myvec{\frac{10}{3}\\\frac{10}{3}}+\myvec{\frac{-4}{3}& \frac{-8}{3}\\\frac{2}{3}& \frac{4}{3}}\vec{u}}
+    \boxed{\vec{x} = \myvec{\frac{1}{2}\\\frac{1}{2}}+\myvec{0&1\\\frac{-1}{2}&1}\vec{u}}
 \end{align}
 \numberwithin{figure}{section}
 \begin{figure}[!ht]
@@ -194,11 +194,12 @@ Now,solution region which is common to regions of eq. \eqref{eq1} and eq. \eqref
 \caption{Graphical Solution}
 \label{fig:fig1}	
 \end{figure}
+
 \numberwithin{figure}{section}
 \begin{figure}[!ht]
 \centering
 \includegraphics[width=\columnwidth]{2.58(2).png}
 \caption{Magnified Solution region}
-\label{fig:fig1}	
+\label{fig:fig2}	
 \end{figure}
 \end{document}
