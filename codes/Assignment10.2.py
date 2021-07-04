@@ -20,12 +20,12 @@ c2 = 1
 c3 = 0
 c4 = 0
 
+
 #Intersection of the lines
 A=line_intersect(n1,c1,n4,c4)
 B=line_intersect(n1,c1,n3,c3)
 C=line_intersect(n2,c2,n3,c3)
 D=line_intersect(n2,c2,n4,c4)
-
 points = np.array((A,B,C,D))
 
 #Filling up the desired region
@@ -43,6 +43,7 @@ plt.text(D[0] * (1 + 0.1), D[1] * (1 - 0.2) , 'D')
 
 plt.xlabel('$x$')
 plt.ylabel('$y$')
+
 plt.grid() # minor
 
 plt.show()
